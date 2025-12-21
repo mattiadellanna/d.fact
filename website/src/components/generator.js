@@ -1,111 +1,70 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import p5 from "p5";
 
 export default function Generator({
-  size = 300,
+  size = 100,
   grid = 4,
   minFilled = 5,
   maxFilled = 14,
   circleRadius = 0.4,
 }) {
   const wrapperRef = useRef();
-  const [pattern, setPattern] = useState([]);
-
-  const padding = size * 0.1;
-  const cellSize = (size - padding * 2) / grid;
-  const radius = cellSize * circleRadius;
 
   useEffect(() => {
     const sketch = (p) => {
+      const padding = size * 0.1;
+      const cellSize = (size - padding * 2) / grid;
+      const radius = cellSize * circleRadius;
+      
+      let pattern = [];
+
       p.setup = () => {
         p.createCanvas(size, size);
         p.noLoop();
-        generatePattern(p);
+        generatePattern();
+        drawPattern();
       };
 
-      p.draw = () => {
-        drawPattern(p);
-      };
+      function generatePattern() {
+        pattern = Array(grid * grid).fill(0);
 
-      function generatePattern(p) {
-        const total = grid * grid;
         const filledCount = p.int(p.random(minFilled, maxFilled + 1));
-        const indices = [...Array(total).keys()];
+        const indices = [...Array(grid * grid).keys()];
+
         p.shuffle(indices, true);
 
-        const data = Array(total).fill(false);
         for (let i = 0; i < filledCount; i++) {
-          data[indices[i]] = true;
+          pattern[indices[i]] = 1;
         }
-
-        setPattern(data);
       }
 
-      function drawPattern(p) {
+      function drawPattern() {
         p.background(255);
         p.noStroke();
-
-        pattern.forEach((filled, i) => {
+        for (let i = 0; i < grid * grid; i++) {
           const col = i % grid;
           const row = Math.floor(i / grid);
 
           const x = padding + col * cellSize + cellSize / 2;
           const y = padding + row * cellSize + cellSize / 2;
 
-          if (filled) {
-            p.fill(0);
+          if (pattern[i] === 1) {
+            p.fill(p.int(p.random(75, 255)));
           } else {
             p.noFill();
-            p.stroke(180);
-            p.strokeWeight(1);
           }
 
           p.ellipse(x, y, radius, radius);
-        });
+        }
       }
     };
 
-    const instance = new p5(sketch, wrapperRef.current);
-    return () => instance.remove();
-  }, [pattern, size, grid, minFilled, maxFilled]);
+    const p5Instance = new p5(sketch, wrapperRef.current);
 
-  // ---- SVG EXPORT ----
-  const exportSVG = () => {
-    const svg = `
-<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="white"/>
-  ${pattern
-    .map((filled, i) => {
-      const col = i % grid;
-      const row = Math.floor(i / grid);
+    return () => {
+      p5Instance.remove();
+    };
+  }, [size, grid, minFilled, maxFilled]);
 
-      const x = padding + col * cellSize + cellSize / 2;
-      const y = padding + row * cellSize + cellSize / 2;
-
-      return filled
-        ? `<circle cx="${x}" cy="${y}" r="${radius / 2}" fill="black" />`
-        : `<circle cx="${x}" cy="${y}" r="${radius / 2}" fill="none" stroke="#bbb" stroke-width="1" />`;
-    })
-    .join("")}
-</svg>`;
-
-    const blob = new Blob([svg], { type: "image/svg+xml" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "dfact-pattern.svg";
-    a.click();
-
-    URL.revokeObjectURL(url);
-  };
-
-  return (
-    <div>
-      <div ref={wrapperRef} />
-      <button onClick={exportSVG} style={{ marginTop: 16 }}>
-        Download SVG
-      </button>
-    </div>
-  );
+  return <div style={{height: size}} ref={wrapperRef} />;
 }
