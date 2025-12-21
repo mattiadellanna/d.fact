@@ -1,0 +1,65 @@
+import { useEffect, useRef } from "react";
+import p5 from "p5";
+
+export default function Generator({size = 100, grid = 4, minFilled = 5, maxFilled = 14, circleRadius = 0.4}) {
+  const wrapperRef = useRef();
+
+  useEffect(() => {
+    let p5Instance = null;
+
+    const sketch = (p) => {
+      const padding = size * 0.1;
+      const cellSize = (size - padding * 2) / grid;
+      const radius = cellSize * circleRadius;
+      
+      let pattern = [];
+
+      p.setup = () => {
+        p.createCanvas(size, size);
+        p.noLoop();
+        generatePattern();
+        drawPattern();
+      };
+
+      function generatePattern() {
+        pattern = Array(grid * grid).fill(0);
+
+        const filledCount = p.int(p.random(minFilled, maxFilled + 1));
+        const indices = [...Array(grid * grid).keys()];
+
+        p.shuffle(indices, true);
+
+        for (let i = 0; i < filledCount; i++) {
+          pattern[indices[i]] = 1;
+        }
+      }
+
+      function drawPattern() {
+        p.background(255);
+        p.noStroke();
+        for (let i = 0; i < grid * grid; i++) {
+          const col = i % grid;
+          const row = Math.floor(i / grid);
+          const x = padding + col * cellSize + cellSize / 2;
+          const y = padding + row * cellSize + cellSize / 2;
+
+          if (pattern[i] === 1) {
+            p.fill(p.int(p.random(0, 200)));
+          } else {
+            p.noFill();
+          }
+
+          p.ellipse(x, y, radius, radius);
+        }
+      }
+    };
+
+    p5Instance = new p5(sketch, wrapperRef.current);
+    return () => {
+      if (p5Instance) p5Instance.remove();
+    };
+
+  }, [size, grid, minFilled, maxFilled, circleRadius]);
+
+  return <div ref={wrapperRef} />;
+}
