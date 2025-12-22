@@ -1,12 +1,19 @@
-import BrandMark from "./components/brandmark";
+import { Routes, Route } from "react-router-dom";
+import Web from './routes/web.js';
+import Header from './components/header.js';
 
 function App() {
-  return (
-    <div style={{ padding: 40 }}>
-      <BrandMark size={ 70 } showLogo={ true } logoPosition="right" />
-    </div>
-  );
-}
+  	return (
+		<>
+			<Header />
 
+			<Routes>
+				{Web.map((route, index) => (
+					<Route key={ index } path={ route.path } element={ <route.component /> } />
+				))}
+			</Routes>
+		</>
+  	);
+}
 
 export default App;
