@@ -6,7 +6,7 @@ export default function Generator({
   grid = 4,
   minFilled = 5,
   maxFilled = 14,
-  circleRadius = 0.4,
+  circleRadius = 0.4
 }) {
   const wrapperRef = useRef();
 
@@ -39,21 +39,19 @@ export default function Generator({
       }
 
       function drawPattern() {
-        p.background(255);
+        p.noFill();
         p.noStroke();
         for (let i = 0; i < grid * grid; i++) {
           const col = i % grid;
           const row = Math.floor(i / grid);
-
           const x = padding + col * cellSize + cellSize / 2;
           const y = padding + row * cellSize + cellSize / 2;
 
           if (pattern[i] === 1) {
-            p.fill(p.int(p.random(75, 255)));
+            p.fill(p.int(p.random(50, 255)));
           } else {
             p.noFill();
           }
-
           p.ellipse(x, y, radius, radius);
         }
       }
@@ -66,5 +64,5 @@ export default function Generator({
     };
   }, [size, grid, minFilled, maxFilled]);
 
-  return <div style={{height: size}} ref={wrapperRef} />;
+  return <div style={{height: size, width: size, display: "inline-block", verticalAlign: "middle"}} ref={wrapperRef} />;
 }

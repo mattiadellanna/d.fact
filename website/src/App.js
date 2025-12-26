@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Web from './routes/web.js';
 import Header from './components/header.js';
+import Footer from './components/footer.js';
 
 function App() {
   	return (
@@ -12,6 +13,8 @@ function App() {
 					<Route key={ index } path={ route.path } element={ <route.component /> } />
 				))}
 			</Routes>
+
+			<Footer />
 		</>
   	);
 }

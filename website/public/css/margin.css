@@ -1,0 +1,14 @@
+.margin.top-bottom-large{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.margin.top-bottom-medium{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.margin.top-bottom-small{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

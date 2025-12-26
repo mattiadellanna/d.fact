@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Fluid Identity",
+    "description": "A brand system with motion and rhythm.",
+    "tags": ["branding", "digital", "typography"],
+    "image": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+  },
+  {
+    "title": "Minimal Spaces",
+    "description": "Interiors shaped by simplicity and light.",
+    "tags": ["interior", "spatial", "design"],
+    "image": "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg"
+  },
+  {
+    "title": "Digital Flow",
+    "description": "A seamless experience across web and app.",
+    "tags": ["digital", "UI/UX", "branding"],
+    "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+  },
+  {
+    "title": "Typographic Harmony",
+    "description": "Letters and forms in perfect balance.",
+    "tags": ["typography", "print", "visuals"],
+    "image": "https://images.pexels.com/photos/110462/pexels-photo-110462.jpeg"
+  },
+  {
+    "title": "Urban Patterns",
+    "description": "Graphic explorations inspired by cityscapes.",
+    "tags": ["visuals", "branding", "design"],
+    "image": "https://images.pexels.com/photos/373965/pexels-photo-373965.jpeg"
+  },
+  {
+    "title": "Brand in Motion",
+    "description": "Dynamic branding that speaks visually.",
+    "tags": ["branding", "digital", "campaign"],
+    "image": "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg"
+  },
+  {
+    "title": "Serene Interiors",
+    "description": "Spaces that evoke calm and inspiration.",
+    "tags": ["interior", "spatial", "branding"],
+    "image": "https://images.pexels.com/photos/37347/pexels-photo-37347.jpeg"
+  },
+  {
+    "title": "Visual Story",
+    "description": "Narrative design through colors and forms.",
+    "tags": ["visuals", "branding", "typography"],
+    "image": "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg"
+  },
+  {
+    "title": "Interactive Journey",
+    "description": "Engaging digital experiences with clarity.",
+    "tags": ["digital", "UI/UX", "experience"],
+    "image": "https://images.pexels.com/photos/3861960/pexels-photo-3861960.jpeg"
+  },
+  {
+    "title": "Geometric Calm",
+    "description": "Shapes and lines creating visual balance.",
+    "tags": ["typography", "print", "design"],
+    "image": "https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg"
+  }
+]

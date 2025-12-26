@@ -1,0 +1,28 @@
+.padding.left-right-large{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.padding.left-right-medium{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.padding.left-right-small{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.padding.small{
+    padding: 10px;
+}
+.padding.medium{
+    padding: 20px;
+}
+
+.padding.column:last-child{
+    padding-right: 0;
+}
+.padding.column:first-child{
+    padding-left: 0;
+}

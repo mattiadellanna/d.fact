@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Instagram",
+    "name": "@D.Fact",
+    "url": "https://google.com",
+    "icon": "fa-brands fa-instagram"
+  },
+  {
+    "title": "Facebook",
+    "name": "@D.Fact",
+    "url": "https://google.com",
+    "icon": "fa-brands fa-facebook"
+  },
+  {
+    "title": "Linkedin",
+    "name": "@D.Fact",
+    "url": "https://google.com",
+    "icon": "fa-brands fa-linkedin-in"
+  },
+  {
+    "title": "Behance",
+    "name": "@D.Fact",
+    "url": "https://google.com",
+    "icon": "fa-brands fa-behance"
+  }
+]

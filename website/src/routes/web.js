@@ -1,5 +1,6 @@
 import Home from '../pages/home';
-import Projects from '../pages/projects';
+import Services from '../pages/services';
+import Portfolio from '../pages/portfolio';
 import Contacts from '../pages/contacts';
 
 const Web = [
@@ -10,9 +11,16 @@ const Web = [
     public: true,
   },
   {
-    label: 'Projects',
-    path: '/projects',
-    component: Projects,
+    label: 'Services',
+    path: '/services',
+    component: Services,
+    exact: true,
+    public: true,
+  },
+  {
+    label: 'Portfolio',
+    path: '/portfolio',
+    component: Portfolio,
     exact: true,
     public: true,
   },

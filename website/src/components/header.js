@@ -7,16 +7,18 @@ class Header extends Component {
     
     render() {
         return (
-        <header>
-            <Link to='/'>
-                <BrandMark size={ 40 } showLogo={ true } logoPosition="right" />
-            </Link>
-            {Web.map((route, index) => (
-                route.label && route.public && (
-                        <NavLink key={ index } to={ route.path } exact >{route.label}</NavLink>
-                )
-            ))}
-        </header>
+            <header className='grid x2 align-center'>
+                <Link to='/'>
+                    <BrandMark size={ 35 } showLogo={ true } logoPosition="right" />
+                </Link>
+                <nav className='text-align-right'>
+                    {Web.map((route, index) => (
+                        route.label && route.public && (
+                            <NavLink className={"column padding left-right-large"} key={ index } to={ route.path } exact >{route.label}</NavLink>
+                        )
+                    ))}
+                </nav>
+            </header>
         );
     }
 }
