@@ -4,21 +4,21 @@
 
 .grid.x2{
     grid-template-columns: repeat(2, 1fr);
-    gap: 4vw;
+    gap: 4vh 4vw;
 }
 
 .grid.x2.large-gap{
-    gap: 16vw;
+    gap: 16vh 16vw;
 }
 
 .grid.x3{
     grid-template-columns: repeat(3, 1fr);
-    gap: 10vw;
+    gap: 10vh 10vw;
 }
 
 .grid.x4{
     grid-template-columns: repeat(4, 1fr);
-    gap: 10vw;
+    gap: 10vh 10vw;
 }
 
 .grid.align-center{

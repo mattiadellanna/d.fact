@@ -3,19 +3,19 @@ import config from '../config/config';
 import SectionTitle from '../components/sectionTitle'
 import steps from "../data/steps.json";
 import services from '../data/services.json';
-import Generator from '../components/generator';
 
 class Services extends Component {  
 	
     componentDidMount() {
         document.title = `${config.name}`;
+        window.scrollTo(0, 0); 
     }
     
     render() {
         
         return (
             <>
-                <section>
+                <section className="hero">
                     <h3>We design <br/><span className="color-grey">more than things.</span></h3>
                     <br/>
                     <h4 className="extra-light">We craft brands that speak, digital experiences that engage, <br/>communications that resonate and spaces that inspire.</h4>    

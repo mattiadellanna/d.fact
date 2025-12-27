@@ -14,7 +14,7 @@ class Contacts extends Component {
         return (
             
             <>
-                <section className='grid x2'>
+                <section className='hero grid x2'>
                     <div>
                         <h3>Let’s craft <br/><span className="color-grey">something together.</span></h3>
                         <br/>

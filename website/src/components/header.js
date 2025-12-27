@@ -14,7 +14,7 @@ class Header extends Component {
                 <nav className='text-align-right'>
                     {Web.map((route, index) => (
                         route.label && route.public && (
-                            <NavLink className={"column padding left-right-large"} key={ index } to={ route.path } exact >{route.label}</NavLink>
+                            <NavLink end className={({ isActive }) => `bold column padding left-right-large${isActive ? " active" : ""}`} key={ index } to={ route.path } exact >{route.label}</NavLink>
                         )
                     ))}
                 </nav>

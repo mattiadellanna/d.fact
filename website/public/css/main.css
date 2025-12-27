@@ -38,7 +38,12 @@ hr{
     display: block;
 }
 
+
 section{
+    padding: 5rem 50px;
+}
+
+section.hero{
     min-height: 420px;
     padding: 12rem 50px;
 }
@@ -73,7 +78,7 @@ input, textarea{
     background: rgb(235, 235, 235);
 }
 
-button {
+button, .button {
     background: rgb(75, 75, 75);
     color: #f5f5f5;
     padding: .75rem;

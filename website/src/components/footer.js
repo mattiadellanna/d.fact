@@ -22,11 +22,11 @@ class Footer extends Component {
                 <div>
                     <small>© {year} — All rights reserved.</small>
                     <TextSeparator/>
+                    <small><span>{config.address}</span></small>
+                    <TextSeparator/>
                     <small><a href="mailto:hello@dfact.studio">{config.email}</a></small>
                     <TextSeparator/>
                     <small><a href="mailto:hello@dfact.studio">{config.phone}</a></small>
-                    <TextSeparator/>
-                    <small><span>{config.address}</span></small>
                     <TextSeparator/>
                     {socials.map((social, index) => (
                         <NavLink className={"column padding left-right-small"} key={ index } title={social.title} to={ social.url } target="_blank">

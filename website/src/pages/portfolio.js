@@ -6,13 +6,14 @@ class Portfolio extends Component {
     
 	componentDidMount() {
         document.title = `${config.name}`;
+        window.scrollTo(0, 0); 
     }
     
     render() {
         
         return (
             <>
-                <section>
+                <section className="hero">
                     <h3>Projects that speak<br/><span className='color-grey'> for themselves.</span></h3>
                     <br/>
                     <h4 className='extra-light'>From branding to digital experiences, campaigns, and interiors — each project is a story crafted with care, vision, and attention to detail.</h4>
