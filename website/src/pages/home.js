@@ -39,7 +39,7 @@ class Home extends Component {
                 <section className="hero">
                     <h3>From Brand to Space: <br/><span className="color-grey">We Design Your World.</span></h3>
                     <br/>
-                    <h4 className="extra-light">Every project begins with an idea and<br/>ends with something you can touch, see, and live.</h4>
+                    <h4 className="extra-light">Every project begins with an idea and<br/>ends with something you can touch, see and live.</h4>
                     <br/><br/>
                     <Cta text="Discover our approach" url="services"></Cta>
                 </section>
