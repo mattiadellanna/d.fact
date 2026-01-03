@@ -15,7 +15,8 @@ export default function Generator({
       const padding = size * 0.1;
       const cellSize = (size - padding * 2) / grid;
       const radius = cellSize * circleRadius;
-      
+      const mainItem = p.int(p.random(0, 15))
+
       let pattern = [];
 
       p.setup = () => {
@@ -46,12 +47,17 @@ export default function Generator({
           const row = Math.floor(i / grid);
           const x = padding + col * cellSize + cellSize / 2;
           const y = padding + row * cellSize + cellSize / 2;
-
-          if (pattern[i] === 1) {
-            p.fill(p.int(p.random(50, 255)));
+          
+          if(i === mainItem){
+            p.fill(247, 202, 24);
           } else {
-            p.noFill();
+            if (pattern[i] === 1) {
+                p.fill(p.int(p.random(50, 255)));
+            } else {
+              p.noFill();
+            }
           }
+          
           p.ellipse(x, y, radius, radius);
         }
       }
