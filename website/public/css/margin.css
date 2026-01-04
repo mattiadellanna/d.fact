@@ -1,14 +1,41 @@
+.margin.top-large{
+    margin-top: 50px;
+}
+.margin.bottom-large{
+    margin-bottom: 50px;
+}
+
+.margin.top-medium{
+    margin-top: 25px;
+}
+.margin.bottom-medium{
+    margin-bottom: 25px;
+}
+
+
+.margin.top-small{
+    margin-top: 10px;
+}
+.margin.bottom-small{
+    margin-bottom: 10px;
+}
+
 .margin.top-bottom-large{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .margin.top-bottom-medium{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .margin.top-bottom-small{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.margin.left-right-small{
+    margin-left: 10px;
+    margin-right: 10px;
 }

@@ -1,6 +1,7 @@
-import { Component } from 'react';
-import config from '../config/config';
-import ContactForm from '../components/contactForm';
+import { Component } from "react";
+import config from "../config/config";
+import ContactForm from "../components/contactForm";
+import { withTranslation } from "react-i18next";
 
 class Contacts extends Component {  
     
@@ -10,32 +11,35 @@ class Contacts extends Component {
     }
     
     render() {
-        
+        const { t } = this.props;
+
         return (
-            
             <>
-                <section className='hero grid x2'>
-                    <div>
-                        <h3>Let’s craft <br/><span className="color-grey">something together.</span></h3>
+                <section className="grid large-padding">
+                    <div className="col-50 padding right-large">
+                        <h3><span dangerouslySetInnerHTML={{ __html: t("contacts.hero.title.line1") }} /><br/><span className="color-grey" dangerouslySetInnerHTML={{ __html: t("contacts.hero.title.line2") }} /></h3>
                         <br/>
-                        <h4 className="extra-light">We’re here to discuss your brand, <br/>your space, your vision — or simply to say hello.</h4>    
-                        <hr className='margin top-bottom-large'/>
-                        <div className='grid x2'>
-                            <div>
-                                <h6 className='bold uppercase'>E-Mail</h6>
+                        <h4 className="extra-light" dangerouslySetInnerHTML={{ __html: t("contacts.hero.payoff") }} />
+                        <hr className="margin top-bottom-large"/>
+                        <div className="grid">
+                            <div className="col-50 margin bottom-large">
+                                <h6 className="bold uppercase">{t("contacts.email")}</h6>
                                 <p>{config.email}</p>
                             </div>
-                            <div>
-                                <h6 className='bold uppercase'>Phone</h6>
+                            <div className="col-50 margin bottom-large">
+                                <h6 className="bold uppercase">{t("contacts.phone")}</h6>
                                 <p>{config.phone}</p>
                             </div>
-                            <div>
-                                <h6 className='bold uppercase'>Studio</h6>
+                            <div className="col-100 margin bottom-large">
+                                <h6 className="bold uppercase">{t("contacts.studio")}</h6>
                                 <p>{config.address}</p>
                             </div>
                         </div>
                     </div>
-                    <ContactForm></ContactForm>
+                    <div className="col-10"></div>
+                    <div className="col-40 padding right-large">
+                        <ContactForm/>
+                    </div>
                 </section>
             </>
 
@@ -43,4 +47,4 @@ class Contacts extends Component {
     }
 }
 
-export default Contacts
+export default withTranslation()(Contacts);

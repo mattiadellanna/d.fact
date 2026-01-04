@@ -1,22 +1,23 @@
 
 import { Component } from 'react';
+import { withTranslation } from "react-i18next";
 import Cta from './cta';
 
 class Engage extends Component {
     
     render() {
-        const year = new Date().getFullYear();
-        
+        const { t } = this.props;
+
         return (
-            <section className="background-dark">
-                <h3 className="color-light">Ready to build something timeless?</h3>
+            <section className="background-yellow">
+                <h3><span dangerouslySetInnerHTML={{ __html: t("engage.title.line1") }} /><br /><span className="color-light" dangerouslySetInnerHTML={{ __html: t("engage.title.line2") }} /></h3>
                 <br/><br/>
-                <h4 className="color-light extra-light">Let's collaborate to transform your vision into a concrete reality<br/>based on fact, not finction.</h4>
+                <h4 className="extra-light" dangerouslySetInnerHTML={{ __html: t("engage.payoff") }} />
                 <br/><br/>
-                <Cta text="Start a project" url="contacts" color="light"></Cta>
+                <Cta text={t("engage.cta")} url="contacts"></Cta>
             </section>
         );
     }
 }
 
-export default Engage;
+export default withTranslation()(Engage);

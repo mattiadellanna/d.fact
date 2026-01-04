@@ -1,26 +1,52 @@
-.grid {
-  display: grid;
+.grid > * {
+  display: inline-block;
+  vertical-align: top;
+}
+.grid.vertical-align-middle > * {
+    vertical-align: middle;
+}
+.col-10{
+    width: calc(100% / 10);
+}
+.col-20{
+    width: calc(100% / 5);
+}
+.col-25{
+    width: calc(100% / 4);
 }
 
-.grid.x2{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4vh 4vw;
+.col-30{
+    width: calc(100% - 70%);
 }
 
-.grid.x2.large-gap{
-    gap: 16vh 16vw;
+.col-33{
+    width: calc(100% / 3);
 }
 
-.grid.x3{
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10vh 10vw;
+.col-40{
+    width: calc(100% - 60%);
 }
 
-.grid.x4{
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10vh 10vw;
+.col-60{
+    width: calc(100% - 40%);
 }
 
-.grid.align-center{
-    align-items: center;
+.col-50{
+    width: calc(100% / 2);
+}
+
+.col-66{
+    width: calc( (100% / 3) * 2 );
+}
+
+.col-70{
+    width: calc(100% - 30%);
+}
+
+.col-75{
+    width: calc(100% - 25%);
+}
+
+.col-100{
+    width: 100%;
 }

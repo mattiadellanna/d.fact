@@ -68,7 +68,7 @@ a:hover, a.active{
 	font-family: "Poppins-Black";
 }
 
-.bold{
+.bold, b{
 	font-family: "Poppins-Bold";
 }
 

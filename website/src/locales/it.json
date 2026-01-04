@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Progetti",
+    "studio": "Studio",
+    "services": "Servizi",
+    "contact": "Contatti"
+  },
+
+  "home": {
+    "hero": {
+    "title": {
+        "line1": "Dal Brand allo Spazio:",
+        "line2": "Progettiamo il Tuo Mondo."
+    },
+    "payoff": "Ogni progetto nasce da un'idea <br/>e si trasforma in qualcosa che puoi vedere, toccare e vivere.",
+    "cta": "Crea una nuova storia con noi"
+    },
+    "studio": {
+        "headline": "Uno studio fondato sulla coerenza.",
+        "subheadline": "D.Fact è uno studio di design indipendente.<br/>Collaboriamo con brand, aziende e privati che credono che il design non sia decorazione, ma uno strumento strategico costruito con chiarezza, coerenza e visione a lungo termine.",
+        "cta": "Scopri i progetti"
+    },
+    "services": {
+        "1": {
+            "title": "Plasmare l'Identità",
+            "description": "Traduciamo visione e valori in sistemi di brand coerenti, definendo un linguaggio visivo, un tono e una struttura chiari e riconoscibili nel tempo."
+        },
+        "2": {
+            "title": "Dove il Significato Fluisce",
+            "description": "Creiamo esperienze digitali in cui contenuto, struttura e interazione si fondono per guidare gli utenti in percorsi intuitivi e significativi."
+        },
+        "3": {
+            "title": "Forma, Funzione, Armonia",
+            "description": "Progettiamo prodotti allineando funzione, usabilità e materiali, concentrandoci su oggetti naturali, utili e pensati nei minimi dettagli."
+        },
+        "4": {
+            "title": "Esperienza Spaziale",
+            "description": "Progettiamo interni considerando proporzioni, materiali e atmosfere, creando spazi che supportano sia la funzionalità che l’esperienza emotiva."
+        }
+    },
+    "featuredProject": {
+        "cta": "Scopri i progetti"
+    }
+  },
+
+  "engage": {
+    "title": {
+        "line1": "Hai un progetto",
+        "line2": "straordinario?"
+    },
+    "payoff": "Collaboriamo per trasformare la tua visione in realtà concreta, <br/>basata su fatti e non su ipotesi.",
+    "cta": "Iniziamo un progetto"
+  },
+
+  "contacts": {
+    "hero": {
+        "title": {
+            "line1": "Creiamo insieme",
+            "line2": "qualcosa di unico."
+        },
+        "payoff": "Siamo qui per parlare del tuo brand,<br/>dei tuoi spazi, della tua visione — o semplicemente per salutarti."
+    },
+    "phone": "Telefono",
+    "email": "E-Mail",
+    "studio": "Studio"
+  },
+
+  "portfolio": {
+    "hero": {
+        "title": {
+            "line1": "Progetti che parlano",
+            "line2": "da soli."
+        },
+        "payoff": "Dal branding alle esperienze digitali, dalle campagne agli interni — ogni progetto racconta una storia pensata con cura, visione e attenzione ai dettagli."
+    }
+  },
+  "project": {
+    "notFound":{
+        "hero": {
+            "title": {
+                "line1": "Ops,",
+                "line2": "progetto non trovato."
+            },
+            "payoff": "Prova a cercarne un altro!",
+            "cta": "Torna al portfolio"
+        }
+    },
+    "client": "Cliente"
+  }
+}

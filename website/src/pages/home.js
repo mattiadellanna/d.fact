@@ -1,11 +1,10 @@
 import { Component } from "react";
+import { withTranslation } from "react-i18next";
 import config from '../config/config';
+import Hero from "../components/hero";
 import Cta from "../components/cta";
-import SectionTitle from '../components/sectionTitle'
 import ItemPreview from "../components/itemPreview";
-import keypoints from "../data/keypoints.json";
 import portfolio from '../data/portfolio.json';
-
 
 class Home extends Component { 
     componentDidMount() {
@@ -18,59 +17,58 @@ class Home extends Component {
     }
 
     render() {
-        const counter = 3
+        const { t } = this.props;
+        const services = t("home.services", { returnObjects: true });
+        const counter = 4
         const featuredProjects = [...portfolio].sort(() => 0.5 - Math.random()).slice(0, counter);
 
         return (
             <>
-                <section className="hero background-yellow">
-                    <h3>From Brand to Space: <br/><span className="color-light">We Design Your World.</span></h3>
-                    <br/>
-                    <h4 className="extra-light">Every project begins with an idea and<br/>ends with something you can touch, see and live.</h4>
-                    <br/><br/>
-                    <Cta text="Discover our approach" url="services"></Cta>
-                </section>
-                <div>
-                    <SectionTitle text="Fragments of a vision"></SectionTitle>
-                    <section>
-                        <div className="grid x3 align-center">
-                            {featuredProjects.map((project, index) => (
-                                <ItemPreview item={project} index={index} />
+                <Hero   title={[t("home.hero.title.line1"), t("home.hero.title.line2")]} 
+                        payoff={t("home.hero.payoff")}
+                        cta={t("home.hero.cta")}
+                        url="contacts"
+                />
+
+                <section className="grid">
+                    <div className="col-40 sticky padding right-large">
+                        <h4 dangerouslySetInnerHTML={{ __html: t("home.studio.headline") }} />
+                        <br/><br/>
+                        <p dangerouslySetInnerHTML={{ __html: t("home.studio.subheadline") }} />
+                    </div>
+
+                    <div className="col-60 padding left-large">
+                        <div className="grid">
+                            {Object.values(services).map((service, index) => (
+                                <div className={`margin bottom-large col-50 padding ${index % 2 === 0 ? "right" : "left"}-large`} key={index}>
+                                    <h4 className="color-dark">
+                                        <span className='color-grey bold padding right-small'>{ String(index + 1).padStart(2, "0") }.</span>
+                                        <span dangerouslySetInnerHTML={{ __html: service.title }} />
+                                    </h4>
+                                    <br/>
+                                    <p dangerouslySetInnerHTML={{ __html: service.description }} />
+                                </div>
                             ))}
                         </div>
-                        <div className="text-align-center">
-                            <br/><br/><br/>
-                            <Cta text="Discover our approach" url="portfolio"></Cta>
-                        </div>
-                    </section>
-                    <SectionTitle text="A studio built on coherence."></SectionTitle>
-                    <section className="grid x2 align-center">
-                        <div>
-                            <img src="../illustrations/studio.svg"/>
-                        </div>
-                        <div>
-                            <p>
-                                D.Fact is an independent design studio.<br/>We work with brands, companies and individuals who believe that design is not decoration, but a strategic tool.
-                                <br/><br/>
-                                Our work is driven by clarity, consistency and long-term thinking.<br/>We collaborate closely with clients, turning ideas into structured, meaningful solutions.
-                            </p>
-                            <br/><br/>
-                            <Cta text="View Case Studies" url="portfolio"></Cta>
-                        </div>
-                    </section>
-                    <section className="grid x3 text-align-center">
-                        {keypoints.map((step, index) => (
-                            <div key={index}>
-                                <img src={`../illustrations/${step.illustration}.svg`}/>
-                                <h4>{ step.title }</h4>
-                                <p>{ step.text }</p>
-                            </div>
-                        ))}
-                    </section>
-                </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div className="grid">
+                        {
+                            featuredProjects.map((project, index) => (
+                                <ItemPreview key={index} item={project} index={index} col="50" />
+                            )) 
+                        }
+                    </div>
+                    <div className="text-align-center block padding large">
+                        <Cta text={t("home.featuredProject.cta")} url="portfolio"></Cta>
+                    </div>
+                </section>
+
             </>
         );
     }
 }
 
-export default Home
+export default withTranslation()(Home);

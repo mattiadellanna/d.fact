@@ -7,6 +7,9 @@
 @import "margin.css";
 @import "colors.css";
 @import "display.css";
+@import "positions.css";
+@import "pointer.css";
+
 
 *{
     transition: all 0.25s ease-in-out;
@@ -31,15 +34,14 @@ header{
     z-index: 2;
     width: 100%;
     background: #f5f5f5;
-    border-bottom: 1px solid rgb(220, 220, 220);
 }
 
 footer{
     padding: 50px;
     width: 100%;
-    background: rgb(235, 235, 235);
     z-index: 2;
     position: relative;
+    background: #f5f5f5;
 }
 
 
@@ -58,73 +60,56 @@ section{
     background: #f5f5f5;
 }
 
-section.hero{
-    min-height: 420px;
+section.large-padding{
     padding: 12rem 50px;
+}
+section.background-cover{
+    min-height: 80vh;
+}
+
+section.hero{
     z-index: 0;
     position: sticky;
     top: 0;
 }
 
 .background-cover{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-size: "cover";
-    background-position: "bottom";
-    background-repeat: "no-repeat";
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#fixed{
-    filter: blur(var(--blur));
-    transform: scale(var(--scale));
-    transform-origin: center;
-    transition: filter 0.05s linear, transform 0.05s linear;
-}
-
-.section-title{
-    padding: 50px;
-    background: rgb(235, 235, 235);
-    z-index: 1;
+.item-preview {
+    height: 50vh;
     position: relative;
 }
 
-.card.reveal{
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-    transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-}
-
-.card.is-visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-.card-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.5s ease, transform 0.5s ease;
-}
-.card-image img {
-    width: 100%;
+.item-preview .image {
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    filter: grayscale(100%);
+}
+.item-preview .overlay{
+    background: rgb(0, 0, 0, .65);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
 }
 
-.card:hover .card-image {
-    filter: grayscale(0%);
+.item-preview .item-title{
+    opacity: 0;
+    color: white;
+    position: relative;
+    z-index: 1;
 }
 
-.pointer{
-    cursor: pointer;
+.item-preview:hover .overlay, 
+.item-preview:hover .item-title {
+    opacity: 1;
+}
+.item-preview:hover .background-cover{
+    background-position: bottom;
 }
 
 input, textarea{

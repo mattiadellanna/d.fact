@@ -1,8 +1,9 @@
 import { Component } from 'react';
+import { withTranslation } from "react-i18next";
 import ItemPreview from '../components/itemPreview';
 import config from '../config/config';
 import portfolio from '../data/portfolio.json';
-import Cta from '../components/cta';
+import Hero from '../components/hero';
 
 class Portfolio extends Component {  
     
@@ -11,27 +12,25 @@ class Portfolio extends Component {
     }
     
     render() {
-        
+        const { t } = this.props;
+
         return (
             <>
-                <section className="hero background-yellow">
-                    <h3>Projects that speak <br/><span className="color-light">for themselves.</span></h3>
-                    <br/>
-                    <h4 className="extra-light">From branding to digital experiences, campaigns, and interiors — each project is a story crafted with care, vision, and attention to detail.</h4>
-                    <br/><br/>
-                    <Cta text="Create a new story" url="contacts"></Cta>
-                </section>
-                <div>
-                    <section className="grid x3">
-                        {portfolio.map((project, index) => (
-                            <ItemPreview item={project} index={index} />
-                        ))}
-                    </section>
-                </div>
+                <Hero   title={[t("portfolio.hero.title.line1"), t("portfolio.hero.title.line2")]} 
+                        payoff={t("portfolio.hero.payoff")}
+                        cta={t("home.hero.cta")}
+                        url="contacts"
+                />
                 
+                <section className="grid">
+                    {portfolio.map((project, index) => (
+                        <ItemPreview key={index} item={project} index={index} />
+                    ))}
+                </section>
+
             </>
         );
     }
 }
 
-export default Portfolio
+export default withTranslation()(Portfolio);

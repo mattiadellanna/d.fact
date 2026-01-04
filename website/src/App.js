@@ -24,8 +24,8 @@ function App() {
 			</Routes>
 			
 			{!isContactPage && <Engage />}
-
-			<Footer />
+			
+			<Footer/>
 		</>
 	);
 }

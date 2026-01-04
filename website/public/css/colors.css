@@ -1,3 +1,6 @@
+.background-transparent {
+    background: transparent;
+}
 .background-light-grey {
     background: rgb(200, 200, 200);
 }
@@ -31,4 +34,7 @@
 
 .color-dark{
     color: rgb(75, 75, 75);
+}
+.color-yellow{
+    color: rgb(247 202 24);
 }
