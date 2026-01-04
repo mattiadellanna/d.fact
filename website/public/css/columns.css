@@ -1,8 +1,0 @@
-.columns.x2 {
-    column-count: 2;
-    column-gap: 12rem;
-    column-rule: 1px solid #ddd;
-    text-align: justify;
-    hyphens: auto;
-    margin: 2rem 0;
-}

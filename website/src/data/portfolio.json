@@ -9,5 +9,16 @@
     },
     "tags": ["branding", "digital", "interior"],
     "images": 5
+  },
+  {
+    "slug": "verde-cafe",
+    "title": "Verde Café",
+    "client": "Verde Café - Restaurant Identity",
+    "description": {
+      "en": "is a branding project for an urban café focusing on eco-conscious values. The identity uses organic shapes, warm colors, and illustrative elements to create a friendly and memorable brand experience.",
+      "it": "È un progetto di branding per un café urbano che valorizza i principi eco-consapevoli. L’identità utilizza forme organiche, colori caldi ed elementi illustrativi per creare un’esperienza di marca accogliente e memorabile."
+    },
+    "tags": ["branding"],
+    "images": 4
   }
 ]

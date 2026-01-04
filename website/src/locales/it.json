@@ -18,7 +18,7 @@
     },
     "studio": {
         "headline": "Uno studio fondato sulla coerenza.",
-        "subheadline": "D.Fact è uno studio di design indipendente.<br/>Collaboriamo con brand, aziende e privati che credono che il design non sia decorazione, ma uno strumento strategico costruito con chiarezza, coerenza e visione a lungo termine.",
+        "subheadline": "<b>D.Fact</b> è uno studio di design indipendente.<br/>Collaboriamo con brand, aziende e privati che credono che il design non sia decorazione, ma uno strumento strategico costruito con chiarezza, coerenza e visione a lungo termine.",
         "cta": "Scopri i progetti"
     },
     "services": {
@@ -63,7 +63,12 @@
     },
     "phone": "Telefono",
     "email": "E-Mail",
-    "studio": "Studio"
+    "studio": "Studio",
+    "form": {
+        "name": "Nome",
+        "message": "Messaggio",
+        "send": "Invia Messaggio"
+    }
   },
 
   "portfolio": {

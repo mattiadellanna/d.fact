@@ -18,7 +18,7 @@
     },
     "studio": {
         "headline": "A studio built on coherence.",
-        "subheadline": "D.Fact is an independent design studio.<br/>We work with brands, companies and individuals who believe that design is not decoration, but a strategic tool built with clarity, consistency and long-term thinking.",
+        "subheadline": "<b>D.Fact</b> is an independent design studio.<br/>We work with brands, companies and individuals who believe that design is not decoration, but a strategic tool built with clarity, consistency and long-term thinking.",
         "cta": "Scopri i progetti"
     },
     "services": {
@@ -61,7 +61,12 @@
     },
     "phone": "Phone",
     "email": "EMail",
-    "studio": "Studio"
+    "studio": "Studio",
+    "form": {
+        "name": "Name",
+        "message": "Message",
+        "send": "Send Message"
+    }
   },
   "portfolio": {
     "hero": {

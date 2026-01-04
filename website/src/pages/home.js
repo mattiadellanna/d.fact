@@ -32,7 +32,7 @@ class Home extends Component {
 
                 <section className="grid">
                     <div className="col-40 sticky padding right-large">
-                        <h4 dangerouslySetInnerHTML={{ __html: t("home.studio.headline") }} />
+                        <h4 className="col-70" dangerouslySetInnerHTML={{ __html: t("home.studio.headline") }} />
                         <br/><br/>
                         <p dangerouslySetInnerHTML={{ __html: t("home.studio.subheadline") }} />
                     </div>
@@ -42,7 +42,7 @@ class Home extends Component {
                             {Object.values(services).map((service, index) => (
                                 <div className={`margin bottom-large col-50 padding ${index % 2 === 0 ? "right" : "left"}-large`} key={index}>
                                     <h4 className="color-dark">
-                                        <span className='color-grey bold padding right-small'>{ String(index + 1).padStart(2, "0") }.</span>
+                                        <span className='color-grey bold padding right-small'>{ String(index + 1).padStart(2, "0") }<span className="color-yellow">.</span></span>
                                         <span dangerouslySetInnerHTML={{ __html: service.title }} />
                                     </h4>
                                     <br/>

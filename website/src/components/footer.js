@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import BrandMark from "./brandmark";
 import socials from '../data/socials.json';
 import TextSeparator from './textSeparator';
@@ -29,9 +29,9 @@ class Footer extends Component {
                     <small><a href="mailto:hello@dfact.studio">{config.phone}</a></small>
                     <TextSeparator/>
                     {socials.map((social, index) => (
-                        <NavLink className={"column padding left-right-small"} key={ index } title={social.title} to={ social.url } target="_blank">
+                        <Link className="column padding left-right-small" key={ index } title={social.title} to={ social.url } target="_blank">
                              <i className={social.icon}></i>
-                        </NavLink>     
+                        </Link>     
                     ))}
                 </div>
             </footer>

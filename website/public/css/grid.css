@@ -35,6 +35,10 @@
     width: calc(100% / 2);
 }
 
+.col-60{
+    width: calc( 100% - 40% );
+}
+
 .col-66{
     width: calc( (100% / 3) * 2 );
 }
