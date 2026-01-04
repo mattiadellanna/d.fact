@@ -125,7 +125,12 @@ button, .button {
     padding: .75rem;
     font-family: 'Poppins-Bold';
     border: none;
+    cursor: pointer;
 }
 button.block{
     width: 100%;
+}
+button:not(.background-transparent):hover, .button:hover {
+    background: rgb(247, 202, 24);
+    color: rgb(75, 75, 75);
 }
