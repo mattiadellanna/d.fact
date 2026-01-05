@@ -44,7 +44,7 @@ h5 {
 	font-size: 1.25rem;
 }
 
-h6 {
+h6, .small-font {
 	font-size: 0.85rem;
 }
 

@@ -35,6 +35,8 @@ class Home extends Component {
                         <h4 className="col-70" dangerouslySetInnerHTML={{ __html: t("home.studio.headline") }} />
                         <br/><br/>
                         <p dangerouslySetInnerHTML={{ __html: t("home.studio.subheadline") }} />
+                        <br/><br/>
+                        <Cta text={t("home.studio.cta")} url="manifesto"></Cta>
                     </div>
 
                     <div className="col-60 padding left-large">

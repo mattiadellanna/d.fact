@@ -1,4 +1,5 @@
 import Home from '../pages/home';
+import Manifesto from '../pages/manifesto';
 import Portfolio from '../pages/portfolio';
 import Contacts from '../pages/contacts';
 import Details from '../pages/details';
@@ -11,7 +12,14 @@ const Web = [
     public: true,
   },
   {
-    label: 'Portfolio',
+    label: 'manifesto',
+    path: '/manifesto',
+    component: Manifesto,
+    exact: true,
+    public: true,
+  },
+  {
+    label: 'portfolio',
     path: '/portfolio',
     component: Portfolio,
     exact: true,
@@ -24,7 +32,7 @@ const Web = [
     public: true,
   },
   {
-    label: 'Contacts',
+    label: 'contacts',
     path: '/contacts',
     component: Contacts,
     exact: true,

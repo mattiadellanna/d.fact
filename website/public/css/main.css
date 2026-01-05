@@ -8,6 +8,7 @@
 @import "display.css";
 @import "positions.css";
 @import "pointer.css";
+@import "opacity.css";
 
 
 *{
@@ -133,4 +134,8 @@ button.block{
 button:not(.background-transparent):hover, .button:hover {
     background: rgb(247, 202, 24);
     color: rgb(75, 75, 75);
+}
+button.small{
+    padding: .5rem;
+    font-size: .75rem;
 }

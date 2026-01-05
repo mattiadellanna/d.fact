@@ -1,93 +1,120 @@
 {
-  "nav": {
-    "home": "Home",
-    "projects": "Progetti",
-    "studio": "Studio",
-    "services": "Servizi",
-    "contact": "Contatti"
-  },
-
-  "home": {
-    "hero": {
-        "title": {
-            "line1": "From Brand to Space:",
-            "line2": "We Design Your World."
-        },
-        "payoff": "Every project begins with an idea and<br/>ends with something you can touch, see and live.",
-        "cta": "Create a new story with us"
+    "nav": {
+        "manifesto": "Manifesto",
+        "portfolio": "Portfolio",
+        "contacts": "Contacts"
     },
-    "studio": {
-        "headline": "A studio built on coherence.",
-        "subheadline": "<b>D.Fact</b> is an independent design studio.<br/>We work with brands, companies and individuals who believe that design is not decoration, but a strategic tool built with clarity, consistency and long-term thinking.",
-        "cta": "Scopri i progetti"
-    },
-    "services": {
-        "1": {
-            "title": "Shaping Identity",
-            "description": "We translate vision and values into coherent brand systems, shaping visual language, tone, and structure that remain clear and recognizable over time."
-        },
-        "2": {
-            "title": "Where Meaning Flows",
-            "description": "We create digital environments where content, structure, and interaction work together to guide users through intuitive and meaningful experiences."
-        },
-        "3": {
-            "title": "Form, Purpose, Balance",
-            "description": "We design products by aligning function, usability, and material choices, focusing on objects that feel natural, useful, and thoughtfully resolved."
-        },
-        "4": {
-            "title": "Spatial Experience",
-            "description": "We design interiors by considering proportion, materials, and atmosphere, creating spaces that support both function and emotional presence."
-        }
-    },
-    "featuredProject": {
-        "cta": "View Case Studies"
-    }
-  },
-  "engage": {
-    "title": {
-        "line1": "Do you have an",
-        "line2": "awesome project?"
-    },
-    "payoff": "Let's collaborate to transform your vision into a concrete reality<br/>based on fact, not finction.",
-    "cta": "Let's start a project"
-  },
-  "contacts": {
-    "hero": {
-        "title": {
-            "line1": "Let’s craft",
-            "line2": "something together."
-        },
-        "payoff": "We’re here to discuss your brand, <br/>your space, your vision — or simply to say hello."
-    },
-    "phone": "Phone",
-    "email": "EMail",
-    "studio": "Studio",
-    "form": {
-        "name": "Name",
-        "message": "Message",
-        "send": "Send Message"
-    }
-  },
-  "portfolio": {
-    "hero": {
-        "title": {
-            "line1": "Projects that speak",
-            "line2": "for themselves."
-        },
-        "payoff": "From branding to digital experiences, campaigns and interiors — each project is a story crafted with care, vision, and attention to detail."
-    }
-  },
-  "project": {
-    "notFound":{
+    "home": {
         "hero": {
             "title": {
-                "line1": "Ops,",
-                "line2": "project not found."
+                "line1": "From Brand to Space:",
+                "line2": "We Design Your World."
             },
-            "payoff": "Let's try to search another one!",
-            "cta": "Back to portfolio"
+            "payoff": "Every project begins with an idea and<br/>ends with something you can touch, see and live.",
+            "cta": "Create a new story with us"
+        },
+        "studio": {
+            "headline": "A studio built on coherence.",
+            "subheadline": "<b>D.Fact</b> is an independent design studio.<br/>We work with brands, companies and individuals who believe that design is not decoration, but a strategic tool built with clarity, consistency and long-term thinking.",
+            "cta": "Discover our Manifesto"
+        },
+        "services": {
+            "1": {
+                "title": "Shaping Identity",
+                "description": "We translate vision and values into coherent brand systems, shaping visual language, tone, and structure that remain clear and recognizable over time."
+            },
+            "2": {
+                "title": "Where Meaning Flows",
+                "description": "We create digital environments where content, structure, and interaction work together to guide users through intuitive and meaningful experiences."
+            },
+            "3": {
+                "title": "Form, Purpose, Balance",
+                "description": "We design products by aligning function, usability, and material choices, focusing on objects that feel natural, useful, and thoughtfully resolved."
+            },
+            "4": {
+                "title": "Spatial Experience",
+                "description": "We design interiors by considering proportion, materials, and atmosphere, creating spaces that support both function and emotional presence."
+            }
+        },
+        "featuredProject": {
+            "cta": "View Case Studies"
         }
     },
-    "client": "Client"
-  }
+    "engage": {
+        "title": {
+            "line1": "Do you have an",
+            "line2": "awesome project?"
+        },
+        "payoff": "Let's collaborate to transform your vision into a concrete reality<br/>based on fact, not finction.",
+        "cta": "Let's start a project"
+    },
+    "manifesto": {
+        "hero": {
+            "title": {
+                "line1": "D.Fact transforms ideas",
+                "line2": "into coherent, evolving systems."
+            },
+            "payoff": "Working across every aspetc design, the studio shapes systems that are built to adapt, respond, and remain relevant over time."
+        },
+        "title": "Our Manifesto",
+        "description": "Every project starts with a clear intention: <br/><b>to understand before designing.</b><br/><br/> Context, culture, and purpose guide each decision, allowing D.Fact to create tailored solutions rather than predefined outputs. Design is approached as a structured process—where strategy, aesthetics, and meaning work together to create clarity and direction.",
+        "steps": {
+            "1": {
+                "title": "Research & <br/>Insights",
+                "description": "We start by understanding your brand, audience, and market to define the right strategy."
+            },
+            "2": {
+                "title": "Concept & <br/>Ideation",
+                "description": "Ideas are developed into clear concepts that guide the visual and experiential design."
+            },
+            "3": {
+                "title": "Design & <br/>Execution",
+                "description": "From branding to digital interfaces and spatial design, we craft each element with precision."
+            }
+        },
+        "logo": {
+            "description": "<b>Our philosophy is reflected in the D.Fact brand.</b><br/><br/> Rather than a fixed symbol, it is conceived as a generative system based on a modular grid. Its elements continuously recombine, producing unique configurations while preserving a recognizable identity. <br/><br/>Each variation represents a different expression of the same core—much like the projects <b>D.Fact</b> develops.<br/><br/>Design, for <b>D.Fact</b>, is not static. It is a living practice: intentional, experimental, and deeply connected to real-world applications.",
+            "refresh": "Refresh Logo",
+            "download": "Download SVG"
+        }
+    }, 
+    "contacts": {
+        "hero": {
+            "title": {
+                "line1": "Let’s craft",
+                "line2": "something together."
+            },
+            "payoff": "We’re here to discuss your brand, <br/>your space, your vision — or simply to say hello."
+        },
+        "phone": "Phone",
+        "email": "EMail",
+        "studio": "Studio",
+        "form": {
+            "name": "Name",
+            "message": "Message",
+            "send": "Send Message"
+        }
+    },
+    "portfolio": {
+        "hero": {
+            "title": {
+                "line1": "Projects that speak",
+                "line2": "for themselves."
+            },
+            "payoff": "From branding to digital experiences, campaigns and interiors — each project is a story crafted with care, vision, and attention to detail."
+        }
+    },
+    "project": {
+        "notFound":{
+            "hero": {
+                "title": {
+                    "line1": "Ops,",
+                    "line2": "project not found."
+                },
+                "payoff": "Let's try to search another one!",
+                "cta": "Back to portfolio"
+            }
+        },
+        "client": "Client"
+    }
 }
