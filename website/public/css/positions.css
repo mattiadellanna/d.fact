@@ -2,3 +2,11 @@
     position: sticky;
     top: calc(60px + 5rem);
 }
+
+
+@media (max-width: 767px) {
+    .xs-relative{
+        position: relative;
+        top: 0;
+    }
+}

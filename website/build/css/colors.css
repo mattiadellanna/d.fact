@@ -1,0 +1,40 @@
+.background-transparent {
+    background: transparent;
+}
+.background-light-grey {
+    background: rgb(200, 200, 200);
+}
+
+.background-grey{
+    background: rgb(150, 150, 150);
+}
+
+.background-dark{
+    background: rgb(75, 75, 75);
+}
+.background-yellow{
+    background: rgb(247 202 24);
+}
+.background-yellow a:hover{
+    color: #f5f5f5;
+}
+
+
+.color-light{
+    color: #f5f5f5;
+}
+
+.color-light-grey{
+    color: rgb(225, 225, 225);
+}
+
+.color-grey{
+    color: rgb(175, 175, 175);
+}
+
+.color-dark{
+    color: rgb(75, 75, 75);
+}
+.color-yellow{
+    color: rgb(247 202 24);
+}

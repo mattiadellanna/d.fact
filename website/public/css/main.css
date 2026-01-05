@@ -139,3 +139,16 @@ button.small{
     padding: .5rem;
     font-size: .75rem;
 }
+
+@media (max-width: 767px) {
+    body{
+        font-size: 12px;
+    }
+    section{
+        padding: 3rem 25px;
+    }
+
+    section.large-padding{
+        padding: 7rem 25px;
+    }   
+}

@@ -1,0 +1,65 @@
+.grid > * {
+  display: inline-block;
+  vertical-align: top;
+}
+.grid.vertical-align-middle > * {
+    vertical-align: middle;
+}
+.col-10{
+    width: calc(100% / 10);
+}
+
+.col-15{
+    width: 15%;
+}
+
+.col-20{
+    width: calc(100% / 5);
+}
+.col-25{
+    width: calc(100% / 4);
+}
+
+.col-30{
+    width: calc(100% - 70%);
+}
+
+.col-33{
+    width: calc(100% / 3);
+}
+
+.col-40{
+    width: calc(100% - 60%);
+}
+
+.col-60{
+    width: calc(100% - 40%);
+}
+
+.col-50{
+    width: calc(100% / 2);
+}
+
+.col-60{
+    width: calc( 100% - 40% );
+}
+
+.col-66{
+    width: calc( (100% / 3) * 2 );
+}
+
+.col-70{
+    width: calc(100% - 30%);
+}
+
+.col-75{
+    width: calc(100% - 25%);
+}
+
+.col-80{
+    width: calc(100% - 20%);
+}
+
+.col-100{
+    width: 100%;
+}

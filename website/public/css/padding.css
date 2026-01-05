@@ -50,3 +50,9 @@
 .padding.large{
     padding: 50px;
 }
+
+@media (max-width: 767px) {
+    .xs-no-padding {
+        padding: 0 !important;
+    }
+}

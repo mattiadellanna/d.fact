@@ -30,19 +30,19 @@ class Home extends Component {
                         url="contacts"
                 />
 
-                <section className="grid">
-                    <div className="col-40 sticky padding right-large">
-                        <h4 className="col-70" dangerouslySetInnerHTML={{ __html: t("home.studio.headline") }} />
+                <section className="grid xs-block">
+                    <div className="col-40 sticky padding right-large xs-col-100 xs-relative xs-block xs-no-padding">
+                        <h4 dangerouslySetInnerHTML={{ __html: t("home.studio.headline") }} />
                         <br/><br/>
                         <p dangerouslySetInnerHTML={{ __html: t("home.studio.subheadline") }} />
                         <br/><br/>
                         <Cta text={t("home.studio.cta")} url="manifesto"></Cta>
                     </div>
-
-                    <div className="col-60 padding left-large">
+                    <hr className="none xs-block margin top-bottom-large"/>
+                    <div className="col-60 padding left-large xs-col-100 xs-block xs-no-padding">
                         <div className="grid">
                             {Object.values(services).map((service, index) => (
-                                <div className={`margin bottom-large col-50 padding ${index % 2 === 0 ? "right" : "left"}-large`} key={index}>
+                                <div className={`margin bottom-large col-50 padding ${index % 2 === 0 ? "right" : "left"}-large xs-col-100 xs-no-padding`} key={index}>
                                     <h4 className="color-dark">
                                         <span className='color-grey bold padding right-small'>{ String(index + 1).padStart(2, "0") }<span className="color-yellow">.</span></span>
                                         <span dangerouslySetInnerHTML={{ __html: service.title }} />
@@ -63,7 +63,7 @@ class Home extends Component {
                             )) 
                         }
                     </div>
-                    <div className="text-align-center block padding large">
+                    <div className="text-align-center block padding large xs-text-align-left xs-no-padding">
                         <Cta text={t("home.featuredProject.cta")} url="portfolio"></Cta>
                     </div>
                 </section>

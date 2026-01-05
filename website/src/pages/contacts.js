@@ -16,7 +16,7 @@ class Contacts extends Component {
         return (
             <>
                 <section className="grid large-padding">
-                    <div className="col-50 padding right-large">
+                    <div className="col-50 padding right-large xs-col-100 xs-no-padding">
                         <h3><span dangerouslySetInnerHTML={{ __html: t("contacts.hero.title.line1") }} /><br/><span className="color-grey" dangerouslySetInnerHTML={{ __html: t("contacts.hero.title.line2") }} /></h3>
                         <br/>
                         <h4 className="extra-light" dangerouslySetInnerHTML={{ __html: t("contacts.hero.payoff") }} />
@@ -36,8 +36,8 @@ class Contacts extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-10"></div>
-                    <div className="col-40 padding right-large">
+                    <div className="col-10 xs-none"></div>
+                    <div className="col-40 padding right-large  xs-col-100 xs-no-padding">
                         <ContactForm/>
                     </div>
                 </section>

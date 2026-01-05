@@ -25,19 +25,21 @@ class Manifesto extends Component {
                     </div>
                 </section>
                 <section className="grid background-yellow">
-                    <div className="col-40 sticky padding right-large">
+                    <div className="col-40 sticky padding right-large xs-block xs-relative xs-col-100 xs-no-padding">
                         <h4 dangerouslySetInnerHTML={{ __html: t("manifesto.title") }} />
                         <br/><br/>
                         <p dangerouslySetInnerHTML={{ __html: t("manifesto.description") }} />
                     </div>
-                    <div className="col-60 padding left-large">
+                    <div className="col-60 padding left-large xs-relative xs-col-100 xs-no-padding">
                         <div className="grid">
                             {Object.values(steps).map((step, index) => (
-                                <div className={`margin bottom-large col-33 padding right-large`} key={index}>
-                                    <h2 className='color-dark opacity x01 bold'>{ String(index + 1).padStart(2, "0") }</h2>
-                                    <h5 className="color-light">
-                                        <span className="bold" dangerouslySetInnerHTML={{ __html: step.title }} />
-                                    </h5>
+                                <div className={`margin bottom-large col-33 padding right-large xs-col-100 xs-no-padding`} key={index}>
+                                    <div className='grid vertical-align-middle'>
+                                        <h2 className='color-dark opacity x01 bold xs-col-30'>{ String(index + 1).padStart(2, "0") }</h2>
+                                        <h5 className="color-light  xs-col-70">
+                                            <span className="bold" dangerouslySetInnerHTML={{ __html: step.title }} />
+                                        </h5>
+                                    </div>
                                     <br/>
                                     <p dangerouslySetInnerHTML={{ __html: step.description }} />
                                 </div>
@@ -46,18 +48,18 @@ class Manifesto extends Component {
                     </div>
                 </section>
                 <section className="grid">
-                    <div className="col-40 sticky padding right-large">
+                    <div className="col-40 sticky padding right-large xs-col-100 xs-no-padding xs-relative xs-block">
                         <div className='grid'>
-                            <div className='col-20'></div>
-                            <div className='col-60 text-align-center'>
+                            <div className='col-20 xs-none'></div>
+                            <div className='col-60 text-align-center xs-col-100'>
                                 <Generator id="download" ref={this.generatorRef}/>
                                 <hr/>
                                 <GeneratorControls generatorRef={this.generatorRef} />
                             </div>
-                            <div className='col-20'></div>
+                            <div className='col-20 xs-none'></div>
                         </div> 
                     </div>
-                    <div className="col-60 padding left-large">
+                    <div className="col-60 padding left-large xs-col-100 xs-no-padding">
                         <p dangerouslySetInnerHTML={{ __html: t("manifesto.logo.description") }} />
                     </div>
                 </section>

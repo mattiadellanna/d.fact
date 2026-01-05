@@ -44,7 +44,7 @@ export default function Details() {
             <section className="background-dark background-cover hero" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.65)), url(${imagesPath}/preview.jpg)`}}></section>
             
             <section className="grid">
-                <div className="col-40 padding right-large">
+                <div className="col-40 padding right-large xs-none">
                     <h5>{t("project.client")}</h5>
                     <p>{project.client}</p>
                     <br /><br />
@@ -53,7 +53,7 @@ export default function Details() {
                     ))}
                 </div>
 
-                <div className="col-60 padding left-large margin bottom-large">
+                <div className="col-60 padding left-large margin bottom-large xs-col-100 xs-no-padding">
                     <h4 className="bold">{project.title}</h4>
                     <br />
                     <p dangerouslySetInnerHTML={{ __html: project.description[currentLang] }} />
@@ -63,7 +63,7 @@ export default function Details() {
                     {Array.from({ length: project.images }).map((_, index) => {
                         const imageNumber = String(index + 1).padStart(2, "0");
                         return (
-                            <div key={index} className={`margin bottom-large col-50 padding ${index % 2 === 0 ? "right" : "left"}-medium`}>
+                            <div key={index} className={`margin bottom-large col-50 padding ${index % 2 === 0 ? "right" : "left"}-medium xs-col-100 xs-no-padding`}>
                                 <img src={`${imagesPath}${imageNumber}.jpg`} alt={`${project.title} image ${index + 1}`}/>
                             </div>
                         );
