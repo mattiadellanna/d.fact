@@ -35,8 +35,8 @@ class Manifesto extends Component {
                             {Object.values(steps).map((step, index) => (
                                 <div className={`margin bottom-large col-33 padding right-large xs-col-100 xs-no-padding`} key={index}>
                                     <div className='grid vertical-align-middle'>
-                                        <h2 className='color-dark opacity x01 bold xs-col-30'>{ String(index + 1).padStart(2, "0") }</h2>
-                                        <h5 className="color-light  xs-col-70">
+                                        <h2 className='col-100 color-dark opacity x01 bold xs-col-30'>{ String(index + 1).padStart(2, "0") }</h2>
+                                        <h5 className="col-100 color-light  xs-col-70">
                                             <span className="bold" dangerouslySetInnerHTML={{ __html: step.title }} />
                                         </h5>
                                     </div>

@@ -3,9 +3,24 @@
 }
 
 .text-align-left{
-    text-align: right;
+    text-align: left;
 }
 
 .text-align-center{
     text-align: center;
+}
+
+
+@media (max-width: 767px) {
+    .xs-text-align-right{
+        text-align: right;
+    }
+
+    .xs-text-align-left{
+        text-align: left;
+    }
+
+    .xs-text-align-center{
+        text-align: center;
+    }
 }

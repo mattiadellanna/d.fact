@@ -22,11 +22,11 @@ class Contacts extends Component {
                         <h4 className="extra-light" dangerouslySetInnerHTML={{ __html: t("contacts.hero.payoff") }} />
                         <hr className="margin top-bottom-large"/>
                         <div className="grid">
-                            <div className="col-50 margin bottom-large">
+                            <div className="col-50 margin bottom-large xs-col-100">
                                 <h6 className="bold uppercase">{t("contacts.email")}</h6>
                                 <p>{config.email}</p>
                             </div>
-                            <div className="col-50 margin bottom-large">
+                            <div className="col-50 margin bottom-large xs-col-100">
                                 <h6 className="bold uppercase">{t("contacts.phone")}</h6>
                                 <p>{config.phone}</p>
                             </div>

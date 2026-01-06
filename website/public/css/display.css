@@ -12,6 +12,9 @@
     .xs-block{
         display: block;
     }
+    .xs-inline-block{
+        display: inline-block;
+    }
     .xs-none{
         display: none;
     }

@@ -27,6 +27,9 @@ const Generator = forwardRef(({
         },
         exportSVG() {
             exportAsSVG();
+        },
+        exportPNG() {
+            return exportAsPNG();
         }
     }));
 
@@ -103,12 +106,16 @@ const Generator = forwardRef(({
         };
     };
 
-    // Funzione export SVG
     const exportAsSVG = () => {
         new p5(p => drawSketch(p, true));
     };
 
-    // Rendering canvas normale
+    const exportAsPNG = () => {
+        const canvas = wrapperRef.current?.querySelector("canvas");
+        if (!canvas) return null;
+        return canvas.toDataURL("image/png");
+    };
+
     useEffect(() => {
         if (!canvasSize) return;
 

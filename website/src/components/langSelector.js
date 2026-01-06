@@ -28,7 +28,7 @@ render() {
     return (
         <>
             {languages.map((lang) => (
-                <button key={lang} onClick={() => this.changeLanguage(lang)} className={`pointer uppercase background-transparent color-dark padding left-right-small ${ currentLang === lang ? "color-yellow bold" : null }`}>
+                <button key={lang} onClick={() => this.changeLanguage(lang)} className={`pointer uppercase background-transparent color-dark padding left-right-small xs-no-padding xs-col-50 xs-inline-block ${ currentLang === lang ? "color-yellow bold" : null }`}>
                     {lang}
                 </button>
             ))}

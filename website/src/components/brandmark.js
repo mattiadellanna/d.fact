@@ -1,7 +1,7 @@
 import Generator from "./generator";
 import { ReactComponent as Logo } from "../assets/typo.svg";
 
-export default function BrandMark({ size = 120, showLogo = true, logoPosition = "right", refresh=false }) {
+export default function BrandMark({ size = 120, showLogo = true, logoPosition = "right", refresh=false}) {
   const padding = size * 0.1;
   const logoHeight = size - (padding * 4);
   const distance = logoHeight / 2;

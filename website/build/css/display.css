@@ -4,3 +4,18 @@
 .inline-block{
     display: inline-block;
 }
+.none {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .xs-block{
+        display: block;
+    }
+    .xs-inline-block{
+        display: inline-block;
+    }
+    .xs-none{
+        display: none;
+    }
+}

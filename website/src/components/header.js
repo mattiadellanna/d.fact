@@ -7,24 +7,41 @@ import TextSeparator from './textSeparator.js';
 import LanguageSelector from './langSelector.js';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          showMenu: false
+        };
+    }
     
+    toggleMenu = () => {
+        this.setState({ showMenu: !this.state.showMenu });
+    };
+
     render() {
         const { t } = this.props;
         
         return (
             <header className='grid vertical-align-middle'>
-                <div className='col-25'>
+                <div className='col-25 xs-col-50'>
                     <Link to='/'>
-                        <BrandMark size={ 35 } showLogo={ true } logoPosition="right" />
+                        <BrandMark size={ 35 } showLogo={ true } logoPosition="right" id="dfact-favicon" />
                     </Link>
                 </div>
-                <nav className='col-75 text-align-right'>
+
+                <div className="none xs-col-50 xs-inline-block text-align-right" >
+                    <i className="fa fa-bars" onClick={this.toggleMenu} ></i>
+                </div>
+                
+                <nav id="mainMenu" className={`col-75 text-align-right xs-text-align-center xs-col-100 ${this.state.showMenu ? 'show' : ''}`}>
                     { Web.map((route, index) => (
                         route.label && route.public && (
-                            <NavLink end className={({ isActive }) => `bold padding left-right-medium ${isActive ? "active" : null}`} key={ index } to={ route.path } >{t(`nav.${route.label}`)}</NavLink>
+                            <NavLink end className={({ isActive }) => `nav-link bold padding left-right-medium xs-col-100 xs-block ${isActive ? "active" : ''}`} key={ index } to={ route.path } >{t(`nav.${route.label}`)}</NavLink>
                         )
                     )) }
-                    <TextSeparator/>
+                    <span className='xs-none inline-block'>
+                        <TextSeparator/>
+                    </span>
                     <LanguageSelector/>
                 </nav>
             </header>
