@@ -52,7 +52,7 @@ class Manifesto extends Component {
                         <div className='grid'>
                             <div className='col-20 xs-none'></div>
                             <div className='col-60 text-align-center xs-col-100'>
-                                <Generator id="download" ref={this.generatorRef}/>
+                                <Generator id="download" downloadPNG={true} ref={this.generatorRef}/>
                                 <hr/>
                                 <GeneratorControls generatorRef={this.generatorRef} />
                             </div>

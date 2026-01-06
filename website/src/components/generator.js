@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import { useLocation } from "react-router-dom";
 import p5 from "p5";
-import "p5-svg"; // supporto ufficiale per esportazione SVG
+import "p5-svg";
+import TypoUrl from "../assets/typo.svg";
 
 const Generator = forwardRef(({
     size,
@@ -14,31 +15,21 @@ const Generator = forwardRef(({
 
     const wrapperRef = useRef(null);
     const location = useLocation();
-
     const [refreshKey, setRefreshKey] = useState(0);
     const [autoSize, setAutoSize] = useState(null);
-
     const canvasSize = size ?? autoSize;
+    const [patternData, setPatternData] = useState([]); 
 
-    // Espone metodi al parent tramite ref
     useImperativeHandle(ref, () => ({
-        refresh() {
-            setRefreshKey(prev => prev + 1);
-        },
-        exportSVG() {
-            exportAsSVG();
-        },
-        exportPNG() {
-            return exportAsPNG();
-        }
+        refresh() { setRefreshKey(prev => prev + 1); },
+        exportSVG() { exportAsSVG(); },
+        exportPNG() { return exportAsPNG(); }
     }));
 
-    // Rigenera al cambio route
     useEffect(() => {
         setRefreshKey(prev => prev + 1);
     }, [location.pathname]);
 
-    // Dimensione dinamica solo se size non è passato
     useEffect(() => {
         if (size || !wrapperRef.current) return;
 
@@ -55,23 +46,18 @@ const Generator = forwardRef(({
         return () => observer.disconnect();
     }, [size]);
 
-    // Funzione di disegno
-    const drawSketch = (p, isSVG = false) => {
+    const drawPattern = (p) => {
         const padding = canvasSize * 0.1;
         const cellSize = (canvasSize - padding * 2) / grid;
         const radius = cellSize * circleRadius;
         const mainItem = p.int(p.random(0, grid * grid));
         let pattern = [];
+        const data = [];
 
         p.setup = () => {
-            if (isSVG) {
-                p.createCanvas(canvasSize, canvasSize, p.SVG);
-            } else {
-                p.createCanvas(canvasSize, canvasSize);
-                p.noLoop();
-            }
+            p.createCanvas(canvasSize, canvasSize);
+            p.noLoop();
 
-            // Genera pattern
             pattern = Array(grid * grid).fill(0);
             const filledCount = p.int(p.random(minFilled, maxFilled + 1));
             const indices = [...Array(grid * grid).keys()];
@@ -80,7 +66,6 @@ const Generator = forwardRef(({
                 pattern[indices[i]] = 1;
             }
 
-            // Disegna pattern
             p.noStroke();
             for (let i = 0; i < grid * grid; i++) {
                 const col = i % grid;
@@ -88,26 +73,78 @@ const Generator = forwardRef(({
                 const x = padding + col * cellSize + cellSize / 2;
                 const y = padding + row * cellSize + cellSize / 2;
 
+                let colorValue = null;
                 if (i === mainItem) {
-                    p.fill(247, 202, 24);
+                    colorValue = "rgba(247, 202, 24, 1)";
                 } else if (pattern[i] === 1) {
-                    p.fill(p.int(p.random(50, 255)));
-                } else {
-                    p.noFill();
+                    const gray = Math.floor(Math.random() * 256);
+                    colorValue = `rgb(${gray},${gray},${gray})`;
                 }
-
-                p.ellipse(x, y, radius, radius);
+                
+                if (colorValue) {
+                    p.fill(colorValue);
+                    p.ellipse(x, y, radius, radius);
+                    data.push({ x, y, r: radius/2, color: colorValue }); 
+                }
             }
 
-            if (isSVG) {
-                p.save(`${id || "dfact-logo"}.svg`);
-                p.remove();
-            }
+            setPatternData(data);
         };
     };
 
-    const exportAsSVG = () => {
-        new p5(p => drawSketch(p, true));
+    const exportAsSVG = async () => {
+        if (!patternData.length) return;
+
+        const svgNS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNS, "svg");
+        
+        const totalWidth = canvasSize * 5;
+        svg.setAttribute("width", totalWidth);
+        svg.setAttribute("height", canvasSize);
+        svg.setAttribute("viewBox", `0 0 ${totalWidth} ${canvasSize}`);
+        
+        patternData.forEach(d => {
+            const circle = document.createElementNS(svgNS, "circle");
+            circle.setAttribute("cx", d.x);
+            circle.setAttribute("cy", d.y);
+            circle.setAttribute("r", d.r);
+            circle.setAttribute("fill", d.color);
+            svg.appendChild(circle);
+        });
+
+        // Carica il file typo.svg come testo
+        const response = await fetch(TypoUrl);
+        const typoText = await response.text();
+
+        // Converti in documento SVG
+        const parser = new DOMParser();
+        const typoDoc = parser.parseFromString(typoText, "image/svg+xml");
+        const typoSvg = typoDoc.documentElement;
+
+        // crea un <g> per traslare e scalare
+        const padding = canvasSize * 0.1;
+        const g = document.createElementNS(svgNS, "g");
+        g.setAttribute("height", `${canvasSize - (padding * 2)}px`);
+        g.setAttribute("transform", `translate(${canvasSize}, ${canvasSize / 100})`);
+
+
+        // sposta tutti i figli di typoSvg dentro g
+        Array.from(typoSvg.childNodes).forEach(node => {
+            g.appendChild(node.cloneNode(true));
+        });
+
+        svg.appendChild(g);
+        
+        const serializer = new XMLSerializer();
+        const svgStr = serializer.serializeToString(svg);
+        const blob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "dfact-logo.svg";
+        a.click();
+        URL.revokeObjectURL(url);
     };
 
     const exportAsPNG = () => {
@@ -119,7 +156,7 @@ const Generator = forwardRef(({
     useEffect(() => {
         if (!canvasSize) return;
 
-        const p5Instance = new p5(p => drawSketch(p, false), wrapperRef.current);
+        const p5Instance = new p5(p => drawPattern(p, false), wrapperRef.current);
 
         return () => p5Instance.remove();
     }, [canvasSize, grid, minFilled, maxFilled, circleRadius, refreshKey]);

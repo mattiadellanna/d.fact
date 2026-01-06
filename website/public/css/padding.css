@@ -34,11 +34,15 @@
     padding-left: 10px;
 }
 
-.padding.left-right-small:first-of-type{
+.padding.left-right-small:first-of-type:not(.single){
     padding-left: 0;
 }
-.padding.left-right-small:last-of-type{
+.padding.left-right-small:last-of-type:not(.single){
     padding-right: 0;
+}
+
+.padding.left-small{
+    padding-left: 10px;
 }
 
 .padding.small{
