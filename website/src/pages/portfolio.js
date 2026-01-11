@@ -4,6 +4,7 @@ import ItemPreview from '../components/itemPreview';
 import config from '../config/config';
 import portfolio from '../data/portfolio.json';
 import Hero from '../components/hero';
+import SEOHead from '../components/seoHead';
 
 class Portfolio extends Component {  
     
@@ -16,6 +17,8 @@ class Portfolio extends Component {
 
         return (
             <>
+                <SEOHead pageTitle={t("nav.portfolio")} />
+
                 <Hero   title={[t("portfolio.hero.title.line1"), t("portfolio.hero.title.line2")]} 
                         payoff={t("portfolio.hero.payoff")}
                         cta={t("home.hero.cta")}

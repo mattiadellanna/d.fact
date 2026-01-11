@@ -75,7 +75,7 @@ const Generator = forwardRef(({
 
                 let colorValue = null;
                 if (i === mainItem) {
-                    colorValue = "rgba(247, 202, 24, 1)";
+                    colorValue = "#F7CA18";
                 } else if (pattern[i] === 1) {
                     const gray = Math.floor(Math.random() * 256);
                     colorValue = `rgb(${gray},${gray},${gray})`;

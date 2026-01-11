@@ -1,4 +1,5 @@
 {
+    "keywords": "design agency, design studio, 360-degree design, design consultancy, brand development, branding and identity, professional interior design, interior design, strategic design, digital design, digital services for businesses, social media design, design for events, design agency Milan, design studio Ticino, interior design Como, branding studio Switzerland, creative design Lombardy, design agency Lugano, digital services Northern Italy, design consultancy Switzerland, design agency for brand and interiors, digital and social design studio, brand systems design, interior design for offices and residences, branding and digital communication services, strategic design for companies and startups, innovative design agency Northern Italy and Switzerland",
     "nav": {
         "manifesto": "Manifesto",
         "portfolio": "Portfolio",
@@ -92,7 +93,11 @@
         "form": {
             "name": "Name",
             "message": "Message",
-            "send": "Send Message"
+            "send": "Send Message",
+            "whatIs": "What is",
+            "wrongCaptcha": "Wrong answer",
+            "emailSent": "Email sent!",
+            "emailNotSent": "Error while sending Email"
         }
     },
     "portfolio": {

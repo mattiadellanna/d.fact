@@ -1,4 +1,5 @@
 {
+    "keywords": "agenzia di design, studio di design, design a 360 gradi, consulenza di design, progettazione brand, branding e identity, interior design professionale, design d’interni, design strategico, progettazione digitale, servizi digitali per aziende, social media design, design per eventi, agenzia di design Milano, design studio Ticino, interior design Como, branding studio Svizzera, design creativo Lombardia, agenzia design Lugano, servizi digitali Nord Italia, consulenza design Svizzera, agenzia di design per brand e interni, studio di design digitale e social, progettazione sistemi di brand, interior design per uffici e residenze, servizi di branding e comunicazione digitale, design strategico per aziende e startup, agenzia di design innovativa Nord Italia e Svizzera",
     "nav": {
         "manifesto": "Manifesto",
         "portfolio": "Portfolio",
@@ -94,7 +95,11 @@
         "form": {
             "name": "Nome",
             "message": "Messaggio",
-            "send": "Invia Messaggio"
+            "send": "Invia Messaggio",
+            "whatIs": "Quanto fa",
+            "wrongCaptcha": "Risposta errata",
+            "emailSent": "Email inviata!",
+            "emailNotSent": "Errore durante l'invio dell'email"
         }
     },
 

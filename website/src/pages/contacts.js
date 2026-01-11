@@ -2,6 +2,7 @@ import { Component } from "react";
 import config from "../config/config";
 import ContactForm from "../components/contactForm";
 import { withTranslation } from "react-i18next";
+import SEOHead from "../components/seoHead";
 
 class Contacts extends Component {  
     
@@ -15,6 +16,8 @@ class Contacts extends Component {
 
         return (
             <>
+                <SEOHead pageTitle={t("nav.contacts")} />
+
                 <section className="grid large-padding">
                     <div className="col-50 padding right-large xs-col-100 xs-no-padding">
                         <h3><span dangerouslySetInnerHTML={{ __html: t("contacts.hero.title.line1") }} /><br/><span className="color-grey" dangerouslySetInnerHTML={{ __html: t("contacts.hero.title.line2") }} /></h3>

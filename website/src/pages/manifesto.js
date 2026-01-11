@@ -3,6 +3,7 @@ import { withTranslation } from "react-i18next";
 import config from '../config/config';
 import Generator from '../components/generator';
 import GeneratorControls from '../components/generatorControls';
+import SEOHead from '../components/seoHead';
 
 class Manifesto extends Component {  
     generatorRef = createRef();
@@ -17,6 +18,8 @@ class Manifesto extends Component {
 
         return (
             <>
+                <SEOHead pageTitle={t("nav.manifesto")} />
+                
                 <section className="grid large-padding">
                     <div className="col-100 padding right-large">
                         <h3><span dangerouslySetInnerHTML={{ __html: t("manifesto.hero.title.line1") }} /><br/><span className="color-grey" dangerouslySetInnerHTML={{ __html: t("manifesto.hero.title.line2") }} /></h3>

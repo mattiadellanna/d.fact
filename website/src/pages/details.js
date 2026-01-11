@@ -5,6 +5,7 @@ import portfolio from "../data/portfolio.json";
 import Cta from "../components/cta";
 import Hero from "../components/hero";
 import i18n from "../i18n";
+import SEOHead from "../components/seoHead";
 
 export default function Details() {
     const { t } = useTranslation();
@@ -41,6 +42,8 @@ export default function Details() {
 
     return (
         <>
+            <SEOHead pageTitle={project.title} pageDescription={project.title + ' - ' + project.description[currentLang] + ' - D.Fact Project'} />
+
             <section className="background-dark background-cover hero" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.65)), url(${imagesPath}/preview.jpg)`}}></section>
             
             <section className="grid">

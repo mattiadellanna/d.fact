@@ -2,13 +2,11 @@ import { Component } from "react";
 import i18n from "../i18n";
 
 class LanguageSelector extends Component {
-state = {
-    currentLang: i18n.language?.split("-")[0] || "en",
-};
+    state = {currentLang: i18n.language?.split("-")[0] || "en"};
 
 componentDidMount() {
     this.langListener = (lng) => {
-    this.setState({ currentLang: lng.split("-")[0] });
+        this.setState({ currentLang: lng.split("-")[0] });
     };
     i18n.on("languageChanged", this.langListener);
 }

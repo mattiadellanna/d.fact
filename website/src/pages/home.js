@@ -5,6 +5,7 @@ import Hero from "../components/hero";
 import Cta from "../components/cta";
 import ItemPreview from "../components/itemPreview";
 import portfolio from '../data/portfolio.json';
+import SEOHead from "../components/seoHead";
 
 class Home extends Component { 
     componentDidMount() {
@@ -24,6 +25,8 @@ class Home extends Component {
 
         return (
             <>
+                <SEOHead />
+                
                 <Hero   title={[t("home.hero.title.line1"), t("home.hero.title.line2")]} 
                         payoff={t("home.hero.payoff")}
                         cta={t("home.hero.cta")}
